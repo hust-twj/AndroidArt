@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        LogUtils.e("twj123","MainActivity  onCreate"  );
         setContentView(R.layout.activity_main);
 
         mRecycleView = findViewById(R.id.recycle_view);
@@ -118,6 +119,25 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        LogUtils.e("twj123","MainActivity  onStart"  );
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        LogUtils.e("twj123","MainActivity  onRestart"  );
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        LogUtils.e("twj123","MainActivity  onResume"  );
     }
 
     @Override
