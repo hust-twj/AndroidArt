@@ -17,7 +17,15 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".view.Chapter1Activity"/>
+        <activity android:name=".view.chapter1.Chapter1Activity"/>
+
+        <activity android:name=".view.chapter1.StandardActivity"/>
+        <activity android:name=".view.chapter1.SingleTopActivity"
+            android:launchMode="singleTop"/>
+        <activity android:name=".view.chapter1.SingleTaskActivity"
+            android:launchMode="singleTask"/>
+        <activity android:name=".view.chapter1.SingleInstanceActivity"
+            android:launchMode="singleInstance"/>
     </application>
 
 </manifest>

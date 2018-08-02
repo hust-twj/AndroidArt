@@ -10,7 +10,7 @@ import android.util.SparseArray;
 
 import com.hust_twj.androidart.adapter.MainAdapter;
 import com.hust_twj.androidart.utils.LogUtils;
-import com.hust_twj.androidart.view.Chapter1Activity;
+import com.hust_twj.androidart.view.chapter1.Chapter1Activity;
 
 import java.util.ArrayList;
 

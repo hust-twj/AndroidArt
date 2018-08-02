@@ -1,11 +1,13 @@
-package com.hust_twj.androidart.view;
+package com.hust_twj.androidart.view.chapter1;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.TextView;
 
 import com.hust_twj.androidart.R;
 import com.hust_twj.androidart.utils.LogUtils;
@@ -15,7 +17,13 @@ import com.hust_twj.androidart.utils.LogUtils;
  * Created by wenjing.tang on 2018/7/6.
  */
 
-public class Chapter1Activity extends AppCompatActivity {
+public class Chapter1Activity extends AppCompatActivity implements View.OnClickListener{
+
+    private TextView mTvDialog;
+    private TextView mTvStandard;
+    private TextView mTvSingleTop;
+    private TextView mTvSingleTask;
+    private TextView mTvSingleInstance;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -25,13 +33,30 @@ public class Chapter1Activity extends AppCompatActivity {
 
         LogUtils.e("twj123", "Chapter1Activity onCreate");
 
+        findViews();
         bindListener();
     }
 
+    private void findViews() {
+        mTvDialog = findViewById(R.id.tv_dialog);
+        mTvStandard = findViewById(R.id.tv_standard);
+        mTvSingleTop = findViewById(R.id.tv_single_top);
+        mTvSingleTask = findViewById(R.id.tv_single_task);
+        mTvSingleInstance = findViewById(R.id.tv_single_instance);
+    }
+
     private void bindListener() {
-        findViewById(R.id.tv_dialog).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        mTvDialog.setOnClickListener(this);
+        mTvStandard.setOnClickListener(this);
+        mTvSingleTop.setOnClickListener(this);
+        mTvSingleTask.setOnClickListener(this);
+        mTvSingleInstance.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.tv_dialog:
                 AlertDialog dialog = new AlertDialog.Builder(Chapter1Activity.this, R.style.Theme_AppCompat_DayNight_Dialog_Alert)
                         .setMessage("确定要清除数据吗？")
                         .setNegativeButton("取消", new DialogInterface.OnClickListener() {
@@ -50,8 +75,27 @@ public class Chapter1Activity extends AppCompatActivity {
                         .create();
                 // dialog.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);//关键
                 dialog.show();
-            }
-        });
+                break;
+            case R.id.tv_standard:
+                startActivity(new Intent(Chapter1Activity.this, StandardActivity.class));
+                break;
+            case R.id.tv_single_top:
+                startActivity(new Intent(Chapter1Activity.this, SingleTopActivity.class));
+                break;
+            case R.id.tv_single_task:
+                startActivity(new Intent(Chapter1Activity.this, SingleTaskActivity.class));
+                break;
+            case R.id.tv_single_instance:
+                startActivity(new Intent(Chapter1Activity.this, SingleInstanceActivity.class));
+                break;
+        }
+
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        LogUtils.e("twj123","Chapter1Activity  onNewIntent"  );
     }
 
     @Override
