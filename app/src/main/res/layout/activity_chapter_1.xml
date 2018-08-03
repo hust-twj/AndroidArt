@@ -92,4 +92,17 @@
         android:padding="10dp"
         android:background="@color/colorPrimary"/>
 
+    <TextView
+        android:id="@+id/tv_intent_filter"
+        android:layout_width="120dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="singleInstance"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_single_instance"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        android:background="@color/colorPrimary"/>
+
 </android.support.constraint.ConstraintLayout>

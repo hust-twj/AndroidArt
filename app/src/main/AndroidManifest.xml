@@ -26,6 +26,16 @@
             android:launchMode="singleTask"/>
         <activity android:name=".view.chapter1.SingleInstanceActivity"
             android:launchMode="singleInstance"/>
+
+        <activity android:name=".view.chapter1.IntentFilterActivity">
+            <intent-filter>
+                <action android:name="com.hust_twj.chapter1.action1"/>
+                <action android:name="com.hust_twj.chapter1.action2"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="com.hust_twj.chapter1.category1"/>
+                <category android:name="com.hust_twj.chapter1.category2"/>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

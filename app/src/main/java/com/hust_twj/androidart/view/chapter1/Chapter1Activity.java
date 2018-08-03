@@ -51,6 +51,7 @@ public class Chapter1Activity extends AppCompatActivity implements View.OnClickL
         mTvSingleTop.setOnClickListener(this);
         mTvSingleTask.setOnClickListener(this);
         mTvSingleInstance.setOnClickListener(this);
+        findViewById(R.id.tv_intent_filter).setOnClickListener(this);
     }
 
     @Override
@@ -87,6 +88,15 @@ public class Chapter1Activity extends AppCompatActivity implements View.OnClickL
                 break;
             case R.id.tv_single_instance:
                 startActivity(new Intent(Chapter1Activity.this, SingleInstanceActivity.class));
+                break;
+            case R.id.tv_intent_filter:
+                Intent intent = new Intent("com.hust_twj.chapter1.action1");
+                //addCategory可以不添加，也可以添加一个或者多个Category
+                //当不添加市，默认为android.intent.category.DEFAULT
+                //添加一个或者多个时，必须保证在xml中都已定义
+               // intent.addCategory("com.hust_twj.chapter1.category1");
+                //intent.addCategory("com.hust_twj.chapter1.category2");
+                startActivity(intent);
                 break;
         }
 
