@@ -38,4 +38,25 @@ public class SingleTaskActivity extends Activity {
         super.onNewIntent(intent);
         LogUtils.e("twj123", " onNewIntent");
     }
+
+    /**
+     * 执行onNewIntent，onCreate不会执行，onStart会执行
+     */
+    @Override
+    protected void onStart() {
+        super.onStart();
+        LogUtils.e("twj123", " onStart");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        LogUtils.e("twj123", " onResume");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        LogUtils.e("twj123", " onRestart");
+    }
 }

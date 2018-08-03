@@ -50,4 +50,16 @@ public class SingleTopActivity extends Activity {
         super.onStart();
         LogUtils.e("twj123", " onStart");
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        LogUtils.e("twj123", " onResume");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        LogUtils.e("twj123", " onRestart");
+    }
 }
